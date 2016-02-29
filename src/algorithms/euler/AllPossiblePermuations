@@ -1,0 +1,17 @@
+#include <iostream>     // std::cout
+#include <algorithm>    // std::next_permutation, std::sort
+
+int main () {
+  char mychars[] = {'a','b','c'};
+
+  std::sort (mychars,mychars+3);
+
+  std::cout << "The 3! possible permutations with 3 elements:\n";
+  do {
+    std::cout << mychars[0] << ' ' << mychars[1] << ' ' << mychars[2] << '\n';
+  } while ( std::next_permutation(mychars,mychars+3) );
+
+  std::cout << "After loop: " << mychars[0] << ' ' << mychars[1] << ' ' << mychars[2] << '\n';
+
+  return 0;
+}
